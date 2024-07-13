@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload X-ray Image</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background-color: #f0f0f0; /* Fallback color */
+            background-image: url('https://images.unsplash.com/photo-1580414052741-36a2eb4a7a5a'); /* Background image */
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Pneumonia Detection</h1>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <label for="fileInput" class="custom-file-upload">
+                <span>Choose File</span>
+                <input type="file" name="file" id="fileInput" accept=".jpg, .jpeg, .png" required>
+            </label>
+            <input type="submit" value="Upload">
+        </form>
+    </div>
+</body>
+</html>
